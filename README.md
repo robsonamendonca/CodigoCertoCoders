@@ -36,8 +36,10 @@ Você pode conquistar um badge ao:
 
 ---
 
-### Exemplos de Badges:
+### Badges Conquistado:
 - Participação em Hackathons
+[Badges por Hackathons](./badges/hackathon/E-commerce%20de%20Bairro.md)
 - Conclusão de Workshop
 - Mentor de Iniciantes
 - Contribuição para Projetos Open Source
+[Badges por Contribuição: Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
