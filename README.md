@@ -43,3 +43,4 @@ Você pode conquistar um badge ao:
 - Mentor de Iniciantes
 - Contribuição para Projetos Open Source
 [Badges por Contribuição: Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
+[Badges por Contribuição: Thiago Sousa](./badges/contributions/thiagodeas-badge.curriculum-maker.md)
