@@ -6,7 +6,7 @@ Aqui você encontra os badges concedidos por completar projetos e desenvolver so
 
 ### 🏅 Criação de Solução para Pequenos Negócios
 - **Projeto "E-commerce de Bairro"**:
-  - [![E-commerce Badge](./badges/ecommerce-bairro.png)](./badges/ecommerce-bairro.png)
+  - [![E-commerce Badge](./badges/hackathon/E-commerce%20de%20Bairro.md)](./badges/hackathon/E-commerce%20de%20Bairro.md)
 
 ### 🏅 Melhor Projeto de Equipes
 - **Projeto "Landing Page da Código Certo Coders"**:
@@ -16,8 +16,11 @@ Aqui você encontra os badges concedidos por completar projetos e desenvolver so
 - **"Contribuidor Destacado"**:
   - [![Contribuidor Destacado Badge](./badges/open-source.png)](./badges/open-source.png)
 
-## Como Conquistar
+### 🏅 Badge OnComanda Developer
+- **OnComanda Developer**:
+  - [![OnComanda Developer](./badges/OnComandaDeveloper2025.png)](./badges/OnComandaDeveloper2025.png)
 
+## Como Conquistar
 - Desenvolva um projeto para um dos desafios ou hackathons da comunidade.
 - Contribua com soluções ou melhorias para projetos de código aberto.
 - Complete projetos propostos pelos mentores e ganhe seu badge!
