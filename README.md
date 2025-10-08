@@ -40,11 +40,11 @@ Você pode conquistar um badge ao:
 - Participação em Hackathons
 [Badges por Hackathons](./badges/hackathon/E-commerce%20de%20Bairro.md)
 - Conclusão de Workshop
-- [![Conclusão de Workshop](./badges/landing-page.png)](./badges/landing-page.png)
+[Conclusão de Workshop](./badges/workshop/README.md)
 - Mentor de Iniciantes
-- [![Mentor de Iniciantes](./badges/landing-page.png)](./badges/landing-page.png)
+[Mentor de Iniciantes](./badges/mentor-init/README.md)
 - OnComanda Developer
-- [![OnComanda Developer](./badges/OnComandaDeveloper2025.png)](./badges/OnComandaDeveloper2025.png)
+[OnComanda Developer](./badges/oncomanda/README.md)
 - Contribuição para Projetos Open Source:
   - [Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
   - [Thiago Sousa](./badges/contributions/thiagodeas-badge.curriculum-maker.md)

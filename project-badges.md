@@ -6,19 +6,19 @@ Aqui você encontra os badges concedidos por completar projetos e desenvolver so
 
 ### 🏅 Criação de Solução para Pequenos Negócios
 - **Projeto "E-commerce de Bairro"**:
-  - [![E-commerce Badge](./badges/hackathon/E-commerce%20de%20Bairro.md)](./badges/hackathon/E-commerce%20de%20Bairro.md)
+  - [![E-commerce Badge](./badges/hackathon-2024.png)](./badges/hackathon/E-commerce%20de%20Bairro.md)
 
 ### 🏅 Melhor Projeto de Equipes
 - **Projeto "Landing Page da Código Certo Coders"**:
-  - [![Landing Page Badge](./badges/landing-page.png)](./badges/landing-page.png)
+  - [![Landing Page Badge](./badges/landing-page.png)](./badges/lp-comunidade/README.md)
 
 ### 🏅 Contribuição com Código Open Source
 - **"Contribuidor Destacado"**:
-  - [![Contribuidor Destacado Badge](./badges/open-source.png)](./badges/open-source.png)
+  - [![Contribuidor Destacado Badge](./badges/open-source.png)](./badges/contributions/README.md)
 
 ### 🏅 Badge OnComanda Developer
 - **OnComanda Developer**:
-  - [![OnComanda Developer](./badges/OnComandaDeveloper2025.png)](./badges/OnComandaDeveloper2025.png)
+  - [![OnComanda Developer](./badges/OnComandaDeveloper2025.png)](./badges/OnComanda/README.md)
 
 ## Como Conquistar
 - Desenvolva um projeto para um dos desafios ou hackathons da comunidade.

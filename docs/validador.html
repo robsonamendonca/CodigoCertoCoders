@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validar Badge | Código Certo Coders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000000;
+      --red: #e53e3e;
+      --white: #ffffff;
+      --light-gray: #f8f8f8;
+      --dark-gray: #333333;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--black);
+      background-color: var(--white);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--red);
+      color: var(--white);
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #c53030;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--red);
+      color: var(--red);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--red);
+      color: var(--white);
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: var(--red);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Search */
+    .search-section {
+      background-color: var(--white);
+      border: 2px solid var(--red);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .search-form {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--red);
+    }
+
+    /* Results */
+    .result-card {
+      background: var(--light-gray);
+      border-left: 4px solid var(--red);
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+
+    .result-success {
+      color: var(--red);
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .result-details {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .github-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--red);
+    }
+
+    .badge-thumbnail {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .no-result {
+      text-align: center;
+      color: var(--dark-gray);
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    /* Badge Categories */
+    .categories {
+      margin-top: 50px;
+    }
+
+    .category-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(229, 62, 62, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 1.2rem;
+    }
+
+    .category-title {
+      font-size: 1.4rem;
+      color: var(--black);
+    }
+
+    .category-desc {
+      color: var(--dark-gray);
+      margin-bottom: 20px;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--light-gray);
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .badge-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--red);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 40px 0 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .footer-logo i {
+      color: var(--red);
+    }
+
+    .footer-links a {
+      color: #ccc;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--red);
+    }
+
+    .copyright {
+      margin-top: 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .search-form {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .badge-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-certificate"></i>
+        Validar Badge
+      </a>
+      <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main" target="_blank" class="btn btn-outline">
+        <i class="fab fa-github"></i> Repositório
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Valide seus Badges Conquistados</h1>
+      <p class="section-subtitle">Confira se você já conquistou oficialmente badges da Comunidade Código Certo Coders</p>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section>
+    <div class="container">
+      <div class="search-section">
+        <h2 class="text-center">Consulte seus Badges</h2>
+        <p class="text-center">Digite seu <strong>usuário do GitHub</strong> para verificar quais badges você já conquistou.</p>
+        
+        <form id="searchForm" class="search-form">
+          <input 
+            type="text" 
+            id="githubUsername" 
+            class="search-input" 
+            placeholder="ex: seu-usuario-github"
+            autocomplete="off"
+          />
+          <button type="submit" class="btn">Buscar</button>
+        </form>
+
+        <div id="resultContainer"></div>
+      </div>
+
+      <!-- Badge Categories -->
+      <div class="categories">
+        <h2 class="section-title text-center">Badges Disponíveis</h2>
+        <p class="section-subtitle text-center">Conquiste badges participando da comunidade e desenvolvendo projetos</p>
+
+        <!-- Category 1: Atividades -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="category-title">Badges por Atividades</h3>
+          </div>
+          <p class="category-desc">
+            Conquiste badges por participar de eventos, contribuir com a comunidade e engajar em iniciativas colaborativas.
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/activity-badges.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+          </p>
+          <div class="badge-grid" id="activityBadges"></div>
+        </div>
+
+        <!-- Category 2: Projetos -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="category-title">Badges por Projetos</h3>
+          </div>
+          <p class="category-desc">
+            Receba badges por desenvolver projetos e soluções reconhecidas pela comunidade, como o desafio OnComanda.
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/project-badges.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+          </p>
+          <div class="badge-grid" id="projectBadges"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-certificate"></i>
+          Código Certo Coders
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main" target="_blank">Repositório Oficial</a>
+          <a href="https://equipe04.vercel.app/index.html" target="_blank">Política de Privacidade</a>
+        </div>
+        <p class="copyright">© 2024 Comunidade Código Certo Coders. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mock data with badge thumbnails
+    const badgeData = {
+      "Atividades": [
+        { github: "robsonamendonca", name: "Robson Mendonça", badge: "Participação Comunidade", date: "2024-07-10", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=PC" },
+        { github: "anacosta", name: "Ana Costa", badge: "Evento Live Code", date: "2024-07-12", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=EL" },
+        { github: "lucasweb", name: "Lucas Ferreira", badge: "Mentoria Iniciante", date: "2024-07-15", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=MI" }
+      ],
+      "Projetos": [
+        { github: "robsonamendonca", name: "Robson Mendonça", badge: "OnComanda", date: "2024-07-10", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=OC" },
+        { github: "mariajs", name: "Maria Silva", badge: "OnComanda", date: "2024-07-12", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=OC" },
+        { github: "pedrodev", name: "Pedro Almeida", badge: "OnComanda", date: "2024-07-15", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=OC" },
+        { github: "juliacode", name: "Júlia Santos", badge: "OnComanda", date: "2024-07-22", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=OC" }
+      ]
+    };
+
+    // DOM Elements
+    const searchForm = document.getElementById('searchForm');
+    const githubInput = document.getElementById('githubUsername');
+    const resultContainer = document.getElementById('resultContainer');
+    const activityBadges = document.getElementById('activityBadges');
+    const projectBadges = document.getElementById('projectBadges');
+
+    // Render badge lists with thumbnails
+    function renderBadgeLists() {
+      // Render Atividades
+      activityBadges.innerHTML = '';
+      badgeData.Atividades.forEach(item => {
+        const avatarUrl = `https://github.com/${item.github}.png?size=60`;
+        const badgeItem = document.createElement('div');
+        badgeItem.className = 'badge-item';
+        badgeItem.innerHTML = `
+          <img src="${item.thumbnail}" alt="${item.badge}" class="badge-thumbnail">
+          <img src="${avatarUrl}" alt="${item.name}" class="badge-avatar" onerror="this.src='https://placehold.co/36x36/000/fff?text=${item.github[0].toUpperCase()}'">
+          <div>
+            <div><strong>${item.badge}</strong></div>
+            <small>@${item.github}</small>
+          </div>
+        `;
+        activityBadges.appendChild(badgeItem);
+      });
+
+      // Render Projetos
+      projectBadges.innerHTML = '';
+      badgeData.Projetos.forEach(item => {
+        const avatarUrl = `https://github.com/${item.github}.png?size=60`;
+        const badgeItem = document.createElement('div');
+        badgeItem.className = 'badge-item';
+        badgeItem.innerHTML = `
+          <img src="${item.thumbnail}" alt="${item.badge}" class="badge-thumbnail">
+          <img src="${avatarUrl}" alt="${item.name}" class="badge-avatar" onerror="this.src='https://placehold.co/36x36/000/fff?text=${item.github[0].toUpperCase()}'">
+          <div>
+            <div><strong>${item.badge}</strong></div>
+            <small>@${item.github}</small>
+          </div>
+        `;
+        projectBadges.appendChild(badgeItem);
+      });
+    }
+
+    // Search function with badge thumbnails
+    function searchBadges(username) {
+      const normalizedUsername = username.trim().toLowerCase();
+      const foundBadges = [];
+
+      // Search in all categories
+      for (const [category, items] of Object.entries(badgeData)) {
+        const userBadges = items.filter(item => item.github.toLowerCase() === normalizedUsername);
+        if (userBadges.length > 0) {
+          foundBadges.push({ category, badges: userBadges });
+        }
+      }
+
+      resultContainer.innerHTML = '';
+
+      if (foundBadges.length > 0) {
+        let resultHTML = `
+          <div class="result-card">
+            <div class="result-success">
+              <i class="fas fa-check-circle"></i> Badges Conquistados!
+            </div>
+            <p>Parabéns! Você conquistou os seguintes badges:</p>
+        `;
+
+        foundBadges.forEach(group => {
+          const firstBadge = group.badges[0];
+          const avatarUrl = `https://github.com/${firstBadge.github}.png?size=80`;
+          resultHTML += `
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+              <h4 style="color: var(--red); margin-bottom: 10px;">${group.category}</h4>
+              <div class="result-details">
+                <img src="${avatarUrl}" alt="${firstBadge.name}" class="github-avatar" onerror="this.src='https://placehold.co/48x48/000/fff?text=${firstBadge.github[0].toUpperCase()}'">
+                <div>
+                  <div><strong>${firstBadge.name}</strong> (@${firstBadge.github})</div>
+                  <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;">
+                    ${group.badges.map(b => `
+                      <div style="display: flex; align-items: center; gap: 6px; background: rgba(229, 62, 62, 0.1); color: var(--red); padding: 6px 10px; border-radius: 6px;">
+                        <img src="${b.thumbnail}" alt="${b.badge}" class="badge-thumbnail" style="width: 28px; height: 28px;">
+                        <span>${b.badge}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        resultHTML += `</div>`;
+        resultContainer.innerHTML = resultHTML;
+      } else {
+        resultContainer.innerHTML = `
+          <div class="no-result">
+            <i class="fas fa-times-circle" style="color: var(--red); font-size: 2rem; margin-bottom: 10px;"></i>
+            <p>Nenhum badge encontrado para <strong>@${username}</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--dark-gray);">
+              Participe de eventos ou desenvolva projetos para conquistar seus badges!
+            </p>
+          </div>
+        `;
+      }
+    }
+
+    // Event Listeners
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = githubInput.value.trim();
+      if (username) {
+        searchBadges(username);
+      }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBadgeLists();
+    });
+  </script>
+</body>
+</html>
