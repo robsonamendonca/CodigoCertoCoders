@@ -1,3 +1,7 @@
+![Códgio Certo Coders](../../docs/head_codigocertocoders.jpg)
+![OnComanda](../../docs/desafio_oncomanda_ccc.png)
+
+
 🚀 **Desafio OnComanda – Crie sua primeira Comanda Eletrônica WEB e conquiste seu Badge!**
 
 Bem-vindo(a) ao **mini treinamento da Comunidade Código Certo Coders**!
