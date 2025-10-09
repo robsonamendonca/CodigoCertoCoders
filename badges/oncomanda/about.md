@@ -1,3 +1,5 @@
+![OnComanda](../../docs/desafio_oncomanda_ccc.png)
+
 🚀 **DESAFIO ONCOMANDA – VALENDO BADGE!** 🚀
 
 Chegou a hora de transformar seu código em **produto real**!
@@ -17,3 +19,5 @@ Lançamos o **Desafio OnComanda**, onde você vai criar do zero uma **Comanda El
 🔥 Bora codar? O Badge te espera!
 
 #CodigoCertoCoders #DesafioOnComanda #Badge
+
+![Códgio Certo Coders](../../docs/head_codigocertocoders.jpg)
