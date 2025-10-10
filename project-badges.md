@@ -24,3 +24,11 @@ Aqui você encontra os badges concedidos por completar projetos e desenvolver so
 - Desenvolva um projeto para um dos desafios ou hackathons da comunidade.
 - Contribua com soluções ou melhorias para projetos de código aberto.
 - Complete projetos propostos pelos mentores e ganhe seu badge!
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

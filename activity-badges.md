@@ -21,3 +21,11 @@ Este é o lugar onde você pode encontrar os badges concedidos por participar de
 - Participe dos eventos e atividades organizados pela comunidade.
 - Mantenha-se ativo e colaborativo no grupo.
 - Receba seu badge ao final de cada atividade e compartilhe com orgulho suas conquistas!
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

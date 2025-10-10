@@ -28,3 +28,11 @@ Aqui estão os badges de reconhecimento dos vencedores do nosso hackathon. Use o
 2. Acesse seu perfil no LinkedIn ou GitHub e faça o upload da imagem do badge como uma conquista de destaque.
 3. Adicione uma legenda que mostre seu resultado no Hackathon Código Certo Coders.
 4. Compartilhe seu sucesso com a comunidade!
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

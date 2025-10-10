@@ -20,3 +20,11 @@ Este documento define as regras e os critérios para ganhar badges na Comunidade
 ## Fique de Olho nas Novidades!
 
 Novas atividades e desafios serão lançados periodicamente. Volte sempre para acompanhar novas formas de ganhar mais badges!
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

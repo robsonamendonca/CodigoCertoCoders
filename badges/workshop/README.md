@@ -17,3 +17,12 @@ Aqui estão os badges de reconhecimento dos apresentadores do nossos Workshop. U
 
 ## Como Conquistar ?
 1. Participe das atividades, entregue e espere a avaliação de um dos mentores da comunidade e a geração do badge com seu nome personalizado.
+
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

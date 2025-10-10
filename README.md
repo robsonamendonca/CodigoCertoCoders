@@ -48,3 +48,12 @@ Você pode conquistar um badge ao:
 - Contribuição para Projetos Open Source:
   - [Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
   - [Thiago Sousa](./badges/contributions/thiagodeas-badge.curriculum-maker.md)
+
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**

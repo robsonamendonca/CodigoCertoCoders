@@ -98,3 +98,11 @@ Ao concluir o desafio, você recebe:
 Boa sorte no desafio! 🚀
 
 O próximo passo é seu: **codar, apresentar e conquistar seu badge!**
+
+---
+
+### Precisa de Ajuda?
+
+Se precisar de assistência, encontrou problemas ou tem sugestões, crie uma issue e descreva suas necessidades.
+
+**Construindo o amanhã, hoje.**
