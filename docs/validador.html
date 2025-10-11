@@ -340,6 +340,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="modal.css">
 </head>
 <body>
   <!-- Header -->
@@ -421,14 +422,33 @@
       </div>
     </div>
   </section>
-<!-- modal-->
- <div class="modal fade" id="termoVoluntario" tabindex="-1" aria-labelledby="termoVoluntarioLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content p-3">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="termoVoluntarioLabel">Política de Privacidade</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-certificate"></i>
+          Código Certo Coders
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomanda" target="_blank">Repositório Oficial</a>
+          <button id="abrirModal" type="button" class="link-button" style="border: none;">Política de Privacidade</button>
+        </div>
+        <p class="copyright">© 2024 Comunidade Código Certo Coders. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer> 
+
+<!-- Modal -->
+<div id="modalPrivacidade" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Política de Privacidade</h2>
+      <span class="fechar">&times;</span>
+    </div>
+
+    <div class="modal-body">
           <div class="modal-body font-roboto">
             <h5 class="fs-6 pb-2">
               Termos e condições para participar do programa Código Certo.
@@ -455,28 +475,14 @@
               <p>Você como usuário do website www.codigocertocoders.com.br possui a total autonomia de desativar os cookies, basta acessar a configuração do seu navegador de preferência e realizar a modificação, ou caso tenha, poderá utilizar um antivirus que faça essa configuração diretamente. Vale ressaltar que, essa modificação poderá influenciar em como você navega em nosso site e em outros sites. Este fato ocorre, porque determinas programações necessitam da utilização de cookies para funcionarem corretamente, tais como os sites que necessitem de login em determinada área restrita.</p><h6>ATUALIZAÇÃO</h6>
               <p>Essa <strong>politica de privacidade</strong> obteve sua última atualização na data de 16/07/2024, podendo ser modificada a qualquer momento, sem aviso prévio.</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Voltar</button>
-          </div>
-        </div>
-      </div>
     </div>
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <i class="fas fa-certificate"></i>
-          Código Certo Coders
-        </div>
-        <div class="footer-links">
-          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomanda" target="_blank">Repositório Oficial</a>
-          <a href="#" target="_blank" id="termoVoluntarioOpen">Política de Privacidade</a>
-        </div>
-        <p class="copyright">© 2024 Comunidade Código Certo Coders. Todos os direitos reservados.</p>
-      </div>
+
+    <div class="modal-footer">
+      <button id="btnCiente">Estou ciente</button>
     </div>
-  </footer>
+  </div>
+</div>
+
 
   <script>
     // Mock data with badge thumbnails
@@ -615,34 +621,8 @@
       renderBadgeLists();
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('termoVoluntario');
-    const abrir = document.getElementById('termoVoluntarioOpen');
-    const fechar = document.getElementsByClassName('btn-close');
-
-    abrir.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
-
-    fechar.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    // Fecha ao clicar fora da modal
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-
-    // Fecha ao pressionar ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        modal.style.display = 'none';
-      }
-    });
-  });
 
   </script>
+  <script src="modal.js"></script>
 </body>
 </html>
