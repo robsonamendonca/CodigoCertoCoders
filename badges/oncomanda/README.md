@@ -28,6 +28,29 @@ Construir uma versão funcional de um sistema de **comanda eletrônica WEB** que
    * **Frontend:** ReactJS ou VueJS
    * **Backend:** Node.js com Express ou NestJS
    * **Banco de dados:** MySQL ou PostgreSQL
+   
+   <div align="left">
+   <img alt="SQLite" height="60" width="60" src="assets/SQLite.svg">   
+   <img alt="MySQL" height="60" width="60" src="assets/MySQL.svg">
+   <img alt="Postgresql" height="60" width="60" src="assets/Postgresql.svg">
+   <img alt="SQL Server" height="60" width="60" src="assets/SQL Server.svg">   
+   <img alt="Oracle" height="60" width="60" src="assets/Oracle.svg">
+   <img alt="MongoDB" height="60" width="60" src="assets/MongoDB.svg">
+   </div>
+
+   Mais... 
+   * **Simples:** [Simples (React + Node.js + SQLite)](./Stack_1-Simples_React_Node.js_SQLite.md)
+   * **Intermediária:** [Intermediária (Vue + NestJS + PostgreSQL)](./Stack_2_Intermediaria_Vue_NestJS_PostgreSQL.md)
+   * **Avançada:** [Serverless (Svelte + Firebase)](./Stack_3%20–%20Serverless_Svelte_Firebase.md)
+
+   <div align="left">
+   <img alt="VanillaJS" height="60" width="60" src="assets/Javascript.svg">
+   <img alt="Python" height="60" width="60" src="assets/Python.svg">
+   <img alt="PHP" height="60" width="60" src="assets/PHP.svg">
+   <img alt="C#" height="60" width="60" src="assets/CSharp.svg">
+   <img alt="Java" height="60" width="60" src="assets/Java.svg">
+   <img alt="Ruby" height="60" width="60" src="assets/Ruby.svg">
+   </div>
 
 ---
 

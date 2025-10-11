@@ -1,3 +1,5 @@
+![Códgio Certo Coders](./docs/head_codigocertocoders.jpg)
+
 # Badges por Projetos 🛠️
 
 Aqui você encontra os badges concedidos por completar projetos e desenvolver soluções para a comunidade ou para desafios específicos. Esses badges são ideais para destacar o seu trabalho como desenvolvedor ou líder de projeto.

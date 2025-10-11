@@ -1,3 +1,5 @@
+![Códgio Certo Coders](./docs/head_codigocertocoders.jpg)
+
 # Repositório de Badges - Comunidade Código Certo Coders 🏆
 
 Bem-vindo ao repositório oficial de **Badges** da Comunidade Código Certo Coders! Aqui você encontrará todos os selos de reconhecimento concedidos aos membros por suas contribuições, participação em eventos, conclusão de projetos e muito mais.

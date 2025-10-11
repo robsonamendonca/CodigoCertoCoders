@@ -1,3 +1,5 @@
+![Códgio Certo Coders](./docs/head_codigocertocoders.jpg)
+
 # Regras para Conquista de Badges ⚖️
 
 Este documento define as regras e os critérios para ganhar badges na Comunidade Código Certo Coders. Siga estas diretrizes para entender como você pode ser premiado por suas contribuições e participação.

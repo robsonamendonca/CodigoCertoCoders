@@ -1,5 +1,15 @@
 # 🧱 Stack 1 – Simples (React + Node.js + SQLite)
 
+<div align="center">
+<img alt="React" height="60" width="60" src="assets/React.svg">
+<img alt="Vite" height="60" width="60" src="assets/Vite.svg">
+<img alt="NodeJS" height="60" width="60" src="assets/NodeJS.svg">
+<img alt="ExpressJS" height="60" width="60" src="assets/ExpressJS.svg">
+<img alt="SQLite" height="60" width="60" src="assets/SQLite.svg">
+<img alt="PrismaORM" height="60" width="60" src="assets/PrismaORM.svg">
+</div>
+
+
 ## 🎯 Visão Geral
 Stack projetada para iniciantes que desejam construir uma versão funcional do **OnComanda** com baixo custo de infraestrutura e configuração mínima. Foco total em entregar algo que funcione rápido, com curva de aprendizado leve.
 

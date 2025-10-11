@@ -1,3 +1,5 @@
+![Códgio Certo Coders](../../docs/head_codigocertocoders.jpg)
+
 # Badges de Premiação - WorkShop 🎉
 
 Aqui estão os badges de reconhecimento dos apresentadores do nossos Workshop. Use o link abaixo do seu badge e compartilhe em seu perfil no LinkedIn, GitHub, e outras redes sociais para mostrar seu destaque!

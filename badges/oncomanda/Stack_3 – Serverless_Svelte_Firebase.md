@@ -1,5 +1,11 @@
 # ☁️ Stack 3 – Serverless (Svelte + Firebase)
 
+<div align="center">
+<img alt="Svelte" height="60" width="60" src="assets/Svelte.svg">
+<img alt="Firebase" height="60" width="60" src="assets/Firebase.svg">
+<img alt="Google Cloud" height="60" width="60" src="assets/Google Cloud.svg">
+</div>
+
 ## 🎯 Visão Geral
 Stack **sem servidor**, ideal para quem quer eliminar complexidade de backend, focando apenas em construir uma aplicação funcional hospedada com custo quase zero.
 

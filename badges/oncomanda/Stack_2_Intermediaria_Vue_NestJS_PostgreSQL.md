@@ -1,5 +1,13 @@
 # ⚙️ Stack 2 – Intermediária (Vue + NestJS + PostgreSQL)
 
+<div align="center">
+<img alt="Vue" height="60" width="60" src="assets/Vue.svg">
+<img alt="Vite" height="60" width="60" src="assets/Vite.svg">
+<img alt="NestJS" height="60" width="60" src="assets/NestJS.svg">
+<img alt="Postgresql" height="60" width="60" src="assets/Postgresql.svg">
+<img alt="Docker" height="60" width="60" src="assets/Docker.svg">
+</div>
+
 ## 🎯 Visão Geral
 Stack voltada para quem já tem alguma experiência e deseja criar um MVP mais robusto, modular e escalável, mantendo ainda a simplicidade do conceito “Menos é Mais”.
 

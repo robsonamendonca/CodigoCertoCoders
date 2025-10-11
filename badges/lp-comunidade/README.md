@@ -1,3 +1,5 @@
+![Códgio Certo Coders](../../docs/head_codigocertocoders.jpg)
+
 # Badges de Premiação - Landing Page da Código Certo Coders 🎉
 
 Aqui estão os badges de reconhecimento das nossas Equipes que desenvolveram as LP da Comunidade. Use o link abaixo do seu badge e compartilhe em seu perfil no LinkedIn, GitHub, e outras redes sociais para mostrar seu destaque!

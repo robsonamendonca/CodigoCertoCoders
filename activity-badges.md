@@ -1,3 +1,5 @@
+![Códgio Certo Coders](./docs/head_codigocertocoders.jpg)
+
 # Badges por Atividades 🎉
 
 Este é o lugar onde você pode encontrar os badges concedidos por participar de atividades na comunidade, como hackathons, workshops, treinamentos e outros eventos. Membros que se destacam em engajamento e colaboração podem receber badges específicos.
