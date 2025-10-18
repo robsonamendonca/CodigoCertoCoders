@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnComanda - Sistema de Comandas Eletrônicas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>OnComanda</h1>
+        <nav>
+            <button id="btn-mesas" class="nav-btn active">Mesas</button>
+            <button id="btn-cardapio" class="nav-btn">Cardápio</button>
+            <button id="btn-pedidos" class="nav-btn">Pedidos</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de Mesas -->
+        <section id="mesas" class="section-content active">
+            <h2>Mesas</h2>
+            <div class="action-bar">
+                <button id="btn-nova-mesa" class="btn-primary">Nova Mesa</button>
+            </div>
+            <div id="lista-mesas" class="grid-container">
+                <!-- As mesas serão carregadas aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Cardápio -->
+        <section id="cardapio" class="section-content">
+            <h2>Cardápio</h2>
+            <div class="action-bar">
+                <button id="btn-novo-item" class="btn-primary">Novo Item</button>
+            </div>
+            <div id="lista-cardapio" class="list-container">
+                <!-- Os itens do cardápio serão carregados aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Pedidos -->
+        <section id="pedidos" class="section-content">
+            <h2>Pedidos</h2>
+            <div id="lista-pedidos" class="list-container">
+                <!-- Os pedidos serão carregados aqui via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para Novo Item do Cardápio -->
+    <div id="modal-item" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Novo Item do Cardápio</h2>
+            <form id="form-item">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preço (R$):</label>
+                    <input type="number" id="preco" name="preco" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="bebida">Bebida</option>
+                        <option value="comida">Comida</option>
+                        <option value="sobremesa">Sobremesa</option>
+                        <option value="geral" selected>Geral</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Nova Mesa -->
+    <div id="modal-mesa" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nova Mesa</h2>
+            <form id="form-mesa">
+                <div class="form-group">
+                    <label for="numero">Número da Mesa:</label>
+                    <input type="number" id="numero" name="numero" min="1" required>
+                </div>
+                <button type="submit" class="btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Novo Pedido -->
+    <div id="modal-pedido" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Novo Pedido - Mesa <span id="mesa-numero"></span></h2>
+            <form id="form-pedido">
+                <input type="hidden" id="mesa-id" name="mesa_id">
+                
+                <div class="form-group">
+                    <label>Itens do Cardápio:</label>
+                    <div id="itens-cardapio-pedido" class="checkbox-list">
+                        <!-- Os itens do cardápio serão carregados aqui via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Criar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    color: #ecf0f1;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn.active {
+    background-color: #3498db;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section-content {
+    display: none;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-content.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+.action-bar {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para listas e grids */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.mesa-card {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mesa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mesa-card.livre {
+    border-left: 5px solid #2ecc71;
+}
+
+.mesa-card.ocupada {
+    border-left: 5px solid #e74c3c;
+}
+
+.mesa-card.reservada {
+    border-left: 5px solid #f39c12;
+}
+
+.mesa-numero {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.mesa-status {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-card, .pedido-card {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-info, .pedido-info {
+    flex: 1;
+}
+
+.item-nome, .pedido-mesa {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.item-preco, .pedido-total {
+    color: #16a085;
+    font-weight: bold;
+}
+
+.item-categoria, .pedido-status {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background-color: #3498db;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.pedido-status.aberto {
+    background-color: #3498db;
+}
+
+.pedido-status.preparando {
+    background-color: #f39c12;
+}
+
+.pedido-status.pronto {
+    background-color: #2ecc71;
+}
+
+.pedido-status.entregue {
+    background-color: #95a5a6;
+}
+
+.pedido-status.fechado {
+    background-color: #7f8c8d;
+}
+
+.pedido-itens {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Estilos para modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.checkbox-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.checkbox-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.checkbox-item input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.quantidade-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.quantidade-btn {
+    background-color: #ecf0f1;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.quantidade-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+}
