@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comanda Eletrônica Web - Código Certo Coders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vermelho: #e74c3c;
+            --preto: #2c3e50;
+            --branco: #ffffff;
+            --cinza-claro: #ecf0f1;
+            --cinza-escuro: #34495e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--branco);
+            color: var(--preto);
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--preto) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--vermelho) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--branco) !important;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--preto) 0%, var(--cinza-escuro) 100%);
+            color: var(--branco);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -50px;
+            width: 400px;
+            height: 400px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+        
+        .btn-vermelho {
+            background-color: var(--vermelho);
+            border-color: var(--vermelho);
+            color: var(--branco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-vermelho:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--vermelho);
+            border-radius: 2px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--branco);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: var(--preto);
+            color: var(--branco);
+            font-weight: 700;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .json-container {
+            background: var(--preto);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .json-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--vermelho);
+        }
+        
+        .json-title {
+            color: var(--vermelho);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .copy-btn, .download-btn {
+            background: var(--vermelho);
+            border: none;
+            color: var(--branco);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover, .download-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .json-code {
+            color: #ecf0f1;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-height: 500px;
+            overflow: auto;
+            white-space: pre;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .badge-vermelho {
+            background-color: var(--vermelho);
+            color: var(--branco);
+        }
+        
+        .list-group-item {
+            border-left: 4px solid var(--vermelho);
+            border-radius: 5px !important;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: var(--preto);
+            color: var(--branco);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-title {
+            color: var(--vermelho);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            margin-right: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--branco);
+            color: var(--vermelho);
+            transform: translateY(-3px);
+        }
+        
+        .highlight {
+            color: var(--vermelho);
+            font-weight: 700;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .json-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .btn-group {
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code"></i> Código Certo Coders
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Funcionalidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#json">JSON para Trello</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comunidade">Comunidade</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Comanda Eletrônica Web</h1>
+            <p class="lead mb-5">Sistema de controle de atendimento para bares e restaurantes | Mesa → Pedidos → Preparo → Servir → Conta</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#json" class="btn btn-vermelho pulse">
+                    <i class="fas fa-download me-2"></i> Baixar JSON para Trello
+                </a>
+                <a href="#features" class="btn btn-outline-light">
+                    <i class="fas fa-arrow-down me-2"></i> Conheça o Projeto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre o Projeto</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-4">
+                                <i class="fas fa-utensils text-danger me-2"></i> Foco no Atendimento Gastronômico
+                            </h3>
+                            <p class="card-text">
+                                Desenvolvemos uma plataforma web completa para digitalizar o processo de atendimento em bares e restaurantes, desde a entrada do cliente até o fechamento da conta.
+                            </p>
+                            <p class="card-text">
+                                Nosso sistema otimiza o fluxo de trabalho, reduz erros e melhora a experiência do cliente com uma interface intuitiva e moderna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-4">
+                                <i class="fas fa-users text-danger me-2"></i> Público-Alvo
+                            </h3>
+                            <p class="card-text">
+                                <span class="highlight">Bares e restaurantes pequenos e médios</span> que buscam modernizar seu processo de atendimento com uma solução acessível e eficiente.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Estabelecimentos que ainda usam comandas em papel</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Locais com internet instável que precisam de modo offline</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Negócios que buscam reduzir custos com sistemas caros</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Funcionalidades Principais</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h4>Cadastro de Mesas</h4>
+                    <p>Gerenciamento visual de mesas com status em tempo real (livre, ocupada, reservada)</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4>Controle de Pedidos</h4>
+                    <p>Criação e acompanhamento de pedidos com categorias, observações e modificações</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Relatórios de Vendas</h4>
+                    <p>Relatórios detalhados de vendas, produtos mais vendidos e desempenho da equipe</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-cubes me-2"></i> Entregas Principais do Projeto
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i> 
+                                    <strong>Cadastro de mesas</strong> - Interface visual intuitiva para gestão das mesas
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i> 
+                                    <strong>Controle de pedidos</strong> - Sistema completo para criação e modificação de pedidos
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i> 
+                                    <strong>Acompanhamento do preparo</strong> - Status em tempo real para cozinha e bar
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i> 
+                                    <strong>Gestão de contas</strong> - Abertura, fechamento e divisão de contas por mesa
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i> 
+                                    <strong>Relatórios de vendas</strong> - Análises detalhadas para tomada de decisão
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JSON Section -->
+    <section id="json" class="py-5">
+        <div class="container">
+            <h2 class="section-title">JSON para Trello - Código Certo Coders</h2>
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i>
+                Copie o JSON abaixo ou faça o download para importar diretamente no Trello
+            </div>
+            
+            <div class="json-container">
+                <div class="json-header">
+                    <h3 class="json-title">
+                        <i class="fas fa-file-code me-2"></i> Comanda Eletrônica Web - Board Kanban
+                    </h3>
+                    <div class="btn-group">
+                        <button id="copyBtn" class="copy-btn">
+                            <i class="fas fa-copy me-1"></i> Copiar
+                        </button>
+                        <button id="downloadBtn" class="download-btn">
+                            <i class="fas fa-download me-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+                
+                <pre id="jsonOutput" class="json-code">{
+  "name": "Comanda Eletrônica Web - Código Certo Coders",
+  "desc": "Projeto: Sistema de controle de atendimento para bares e restaurantes | Mesa → Pedidos → Preparo → Servir → Conta",
+  "lists": [
+    {
+      "name": "🎯 Objetivo & Planejamento",
+      "cards": [
+        {
+          "name": "OBJETIVO PRINCIPAL: Sistema completo de comanda eletrônica",
+          "desc": "Desenvolver plataforma web para controle de atendimento em estabelecimentos gastronômicos desde a entrada do cliente até o fechamento da conta"
+        },
+        {
+          "name": "PÚBLICO-ALVO: Bares e restaurantes pequenos/médios",
+          "desc": "Foco em estabelecimentos que buscam digitalizar seu processo de atendimento"
+        },
+        {
+          "name": "ENTREGAS PRINCIPAIS DO PROJETO",
+          "desc": "- Cadastro de mesas\n- Controle de pedidos\n- Acompanhamento do preparo\n- Gestão de contas\n- Relatórios de vendas"
+        }
+      ]
+    },
+    {
+      "name": "🟪 Backlog / Ideias",
+      "cards": [
+        {
+          "name": "[FEATURE] Integração com impressoras térmicas",
+          "desc": "Envio automático de pedidos para cozinha/bar via impressora"
+        },
+        {
+          "name": "[FEATURE] Modo offline para locais com internet instável",
+          "desc": "Sincronização quando conexão retornar"
+        },
+        {
+          "name": "[FEATURE] App mobile para garçons",
+          "desc": "Versão mobile otimizada para tablets/smartphones"
+        }
+      ]
+    },
+    {
+      "name": "🟨 A Fazer (Semana Atual)",
+      "cards": [
+        {
+          "name": "[MVP] Definir stack tecnológica",
+          "desc": "Frontend: React/Vue? Backend: Node.js/Python? Banco: PostgreSQL/MongoDB?"
+        },
+        {
+          "name": "[MVP] Protótipo do fluxo principal",
+          "desc": "Mesa → Fazer pedido → Cozinha recebe → Preparar → Entregar → Fechar conta"
+        },
+        {
+          "name": "[ARQUITETURA] Modelagem do banco de dados",
+          "desc": "Tabelas: Mesas, Pedidos, Produtos, Usuários, Contas"
+        }
+      ]
+    },
+    {
+      "name": "🟦 Em Progresso",
+      "cards": [
+        {
+          "name": "[UI/UX] Design do sistema de mesas",
+          "desc": "Interface visual para representar mesas ocupadas/livres e seus status"
+        },
+        {
+          "name": "[BACKEND] API para gestão de pedidos",
+          "desc": "Endpoints: criar pedido, atualizar status, listar pedidos por mesa"
+        }
+      ]
+    },
+    {
+      "name": "🟩 Em Revisão / Testes",
+      "cards": [
+        {
+          "name": "[TESTES] Fluxo de criação de conta",
+          "desc": "Validar abertura/fechamento de comanda para clientes"
+        }
+      ]
+    },
+    {
+      "name": "🟧 Aguardando Decisão",
+      "cards": [
+        {
+          "name": "[DESIGN] Definição do padrão de cores e branding",
+          "desc": "Aguardando feedback da comunidade sobre identidade visual"
+        },
+        {
+          "name": "[ARQUITETURA] Escolha da solução de real-time",
+          "desc": "WebSockets vs Server-Sent Events vs Polling para atualizações em tempo real"
+        }
+      ]
+    },
+    {
+      "name": "🟢 Concluído - MVP",
+      "cards": [
+        {
+          "name": "[DOC] Especificação de requisitos",
+          "desc": "Documento com todos os casos de uso e funcionalidades principais"
+        },
+        {
+          "name": "[SETUP] Ambiente de desenvolvimento",
+          "desc": "Repositório Git configurado com estrutura inicial do projeto"
+        }
+      ]
+    },
+    {
+      "name": "📚 Aprendizados & Recursos",
+      "cards": [
+        {
+          "name": "📖 Pesquisa: Sistemas similares no mercado",
+          "desc": "Análise de concorrentes e funcionalidades existentes"
+        },
+        {
+          "name": "💡 Padrões para sistemas de restaurante",
+          "desc": "Melhores práticas de UX para atendimento gastronômico"
+        },
+        {
+          "name": "🔧 Stack tecnológica recomendada",
+          "desc": "Sugestões baseadas em projetos similares da comunidade"
+        }
+      ]
+    },
+    {
+      "name": "👥 Comunidade - Desafios",
+      "cards": [
+        {
+          "name": "🎮 DESAFIO: Implementar sistema de mesas em tempo real",
+          "desc": "Criar interface que mostre mudanças de status instantaneamente"
+        },
+        {
+          "name": "🎮 DESAFIO: Design responsivo para diferentes dispositivos",
+          "desc": "Funcionar bem em desktop, tablet e mobile"
+        },
+        {
+          "name": "💬 Discussão: Funcionalidades prioritárias para MVP",
+          "desc": "Votação da comunidade sobre o que desenvolver primeiro"
+        }
+      ]
+    }
+  ]
+}</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunidade Section -->
+    <section id="comunidade" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title text-white">Comunidade Código Certo Coders</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon bg-white">
+                        <i class="fas fa-code text-danger"></i>
+                    </div>
+                    <h4>Colaboração Aberta</h4>
+                    <p>Contribua com código, ideias e melhorias para o projeto</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon bg-white">
+                        <i class="fas fa-lightbulb text-danger"></i>
+                    </div>
+                    <h4>Aprendizado Coletivo</h4>
+                    <p>Compartilhe conhecimentos e aprenda com outros desenvolvedores</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon bg-white">
+                        <i class="fas fa-trophy text-danger"></i>
+                    </div>
+                    <h4>Desafios Práticos</h4>
+                    <p>Participe de desafios reais para desenvolver suas habilidades</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="lead">
+                    <i class="fas fa-star text-warning me-2"></i>
+                    Junte-se à nossa comunidade e faça parte do desenvolvimento deste Desafio da Comunidade!
+                </p>
+                <a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" class="btn btn-vermelho mt-3" target="_blank">
+                    <i class="fas fa-users me-2"></i> Participe da Comunidade
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-code me-2"></i> Código Certo Coders
+                    </h3>
+                    <p>Desafio da Comunidade Código Certo Coders para desenvolvedores que querem transformar conhecimento em renda recorrente.</p>
+                    <div class="mt-3">
+                        <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" class="social-icon" target="_bl"><i class="fab fa-github"></i></a>
+                        <a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/codigocertocoders/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtu.be/iS8YDsevj0Q?si=Za3bI2-HTsT_Esce" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#sobre" class="text-light text-decoration-none">Sobre o Projeto</a></li>
+                        <li><a href="#features" class="text-light text-decoration-none">Funcionalidades</a></li>
+                        <li><a href="#json" class="text-light text-decoration-none">JSON para Trello</a></li>
+                        <li><a href="#comunidade" class="text-light text-decoration-none">Comunidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2 text-danger"></i> codigocertocoders@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2 text-danger"></i> Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Código Certo Coders. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyBtn = document.getElementById('copyBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const jsonOutput = document.getElementById('jsonOutput');
+            
+            // Função para copiar JSON
+            copyBtn.addEventListener('click', function() {
+                const text = jsonOutput.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check me-1"></i> Copiado!';
+                    copyBtn.classList.remove('btn-vermelho');
+                    copyBtn.classList.add('btn-success');
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                        copyBtn.classList.remove('btn-success');
+                        copyBtn.classList.add('btn-vermelho');
+                    }, 2000);
+                }).catch(err => {
+                    alert('Erro ao copiar: ' + err);
+                });
+            });
+            
+            // Função para download do JSON
+            downloadBtn.addEventListener('click', function() {
+                const jsonContent = jsonOutput.textContent;
+                const blob = new Blob([jsonContent], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'comanda-eletronica-web-trello.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Smooth scroll para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
