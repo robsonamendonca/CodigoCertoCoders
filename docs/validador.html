@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +30,10 @@
       background-color: var(--white);
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       font-weight: 700;
       line-height: 1.2;
     }
@@ -145,7 +149,7 @@
       padding: 40px;
       max-width: 700px;
       margin: 0 auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     .search-form {
@@ -224,7 +228,7 @@
       border-radius: 12px;
       padding: 25px;
       margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .category-header {
@@ -342,6 +346,7 @@
   </style>
   <link rel="stylesheet" href="modal.css">
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -350,27 +355,24 @@
         <i class="fas fa-certificate"></i>
         Validar Badge
       </a>
-      <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomandan" target="_blank" class="btn btn-outline">
+      <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomandan" target="_blank"
+        class="btn btn-outline">
         <i class="fab fa-github"></i> Repositório
       </a>
     </div>
   </header>
-  
+
   <!-- Search -->
   <section>
     <div class="container">
       <div class="search-section">
         <h2 class="text-center">Consulte seus Badges</h2>
-        <p class="text-center">Digite seu <strong>usuário do GitHub</strong> para verificar quais badges você já conquistou.</p>
-        
+        <p class="text-center">Digite seu <strong>usuário do GitHub</strong> para verificar quais badges você já
+          conquistou.</p>
+
         <form id="searchForm" class="search-form">
-          <input 
-            type="text" 
-            id="githubUsername" 
-            class="search-input" 
-            placeholder="ex: seu-usuario-github"
-            autocomplete="off"
-          />
+          <input type="text" id="githubUsername" class="search-input" placeholder="ex: seu-usuario-github"
+            autocomplete="off" />
           <button type="submit" class="btn">Buscar</button>
         </form>
 
@@ -391,8 +393,10 @@
             <h3 class="category-title">Badges por Atividades</h3>
           </div>
           <p class="category-desc">
-            Conquiste badges por participar de eventos, contribuir com a comunidade e engajar em iniciativas colaborativas.
-            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/activity-badges.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+            Conquiste badges por participar de eventos, contribuir com a comunidade e engajar em iniciativas
+            colaborativas.
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/activity-badges.md" target="_blank"
+              style="color: var(--red); font-weight: 600;">Ver critérios →</a>
           </p>
           <div class="badge-grid" id="activityBadges"></div>
         </div>
@@ -407,12 +411,13 @@
           </div>
           <p class="category-desc">
             Receba badges por desenvolver projetos e soluções reconhecidas pela comunidade, como o desafio OnComanda.
-            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/project-badges.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/project-badges.md" target="_blank"
+              style="color: var(--red); font-weight: 600;">Ver critérios →</a>
           </p>
           <div class="badge-grid" id="projectBadges"></div>
         </div>
 
-                <!-- Category 3: Hackathons -->
+        <!-- Category 3: Hackathons -->
         <div class="category-card">
           <div class="category-header">
             <div class="category-icon">
@@ -422,7 +427,8 @@
           </div>
           <p class="category-desc">
             Receba badges por participar de hackathons e desenvolver soluções reconhecidas pela comunidade.
-            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/hackathon/E-commerce%20de%20Bairro.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/hackathon/E-commerce%20de%20Bairro.md"
+              target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
           </p>
           <div class="badge-grid" id="hackathonBadges"></div>
         </div>
@@ -439,56 +445,99 @@
           Código Certo Coders
         </div>
         <div class="footer-links">
-          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomanda" target="_blank">Repositório Oficial</a>
-          <button id="abrirModal" type="button" class="link-button" style="border: none;">Política de Privacidade</button>
+          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main/badges/oncomanda"
+            target="_blank">Repositório Oficial</a>
+          <button id="abrirModal" type="button" class="link-button" style="border: none;">Política de
+            Privacidade</button>
         </div>
         <p class="copyright">© 2024 Comunidade Código Certo Coders. Todos os direitos reservados.</p>
       </div>
     </div>
-  </footer> 
+  </footer>
 
-<!-- Modal -->
-<div id="modalPrivacidade" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Política de Privacidade</h2>
-      <span class="fechar">&times;</span>
-    </div>
+  <!-- Modal -->
+  <div id="modalPrivacidade" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Política de Privacidade</h2>
+        <span class="fechar">&times;</span>
+      </div>
 
-    <div class="modal-body">
-          <div class="modal-body font-roboto">
-            <h5 class="fs-6 pb-2">
-              Termos e condições para participar do programa Código Certo.
-            </h5>
-            <p class="modal__text">
-              </p><p>É importante esclarecer que dados pessoais são considerados como: todas as informações que possam ser utilizadas para identificar alguma pessoa. Estes dados, podem ser considerados sensíveis, tais como: convicção religiosa, saúde ou à vida sexual, origem racial ou étnica, opinião política, dado genético ou biométrico, filiação a sindicato ou a organização de caráter religioso, filosófico ou político.</p>
-              <h6>SEÇÃO I - INFORMAÇÕES GERAIS</h6>
-              <p>Nesta <strong>política de privacidade</strong> será informado a maneira que ocorre o tratamento dos dados pessoais das pessoas que acessam o site www.codigocertocoders.com.br informando assim, de forma transparente quais são os dados, qual o intuito da coleta e a maneira que os visitantes podem controlar ou deletar suas informações.</p>
-              <p>Este texto foi criado de acordo com a lei de Proteção de Dados Pessoais (Lei /18), o Marco Civil da Internet  (Lei 12.965 /14) e também o Regulamento da UE n. 2016/6790. Vale ressaltar que, este texto poderá sofrer alterações por conta de eventuais atualizações normativas.</p>
-              <p>Informamos que toda e qualquer informação pessoal coletada por por nosso website www.codigocertocoders.com.br será utilizada para melhorar a sua experiência ao navegar em nosso website, visando desta maneira que sua visita se torne mais vantajosa e assertiva.</p>
-              <p>A confidencialidade das informações pessoais dos usuários do site www.codigocertocoders.com.br é de suma importância para nossa equipe, por este motivo, buscamos otimizar continuamente todos os processos internos, para mante-los em segurança e de acordo com todas as normas impostas.</p>
-              <h6>SEÇÃO II - COLETA DOS DADOS</h6>
-              <p>Os dados pessoais dos visitantes podem ser coletados quando:</p>
-              <p><strong>II.I</strong> - O  indivíduo realiza a criação de um cadastro no site www.codigocertocoders.com.br e com base nisso podem ser solicitados dados como: email, nome, cidade, telefone, etc.</p>
-              <p><strong>II.II</strong> - O indivíduo navega nas páginas de nosso site www.codigocertocoders.com.br e neste caso, podem ser coletados dados como: palavras-chaves de origem do buscador, comentários, navegador utilizado, IP da rede, etc.</p>
-              <p><strong>II.III</strong> - Por meio de terceiros, tais como: Google e/ou Facebook, sendo que, no momento de logar em um destes sites é autorizado diretamente pelo terceiro.</p>
-              <p>No caso de envio de newsletters ou até mesmo envio de avisos por e-mail os cookies podem ser utilizados para direcionar um conteúdo mais adequado ao usuário final, com o intuito de melhorar a experiência de quem está lendo o e-mail, vale ressaltar que cada provedor de email possui suas diretrizes, você deverá respeitar suas devidas políticas.</p>
-              <h6>SEÇÃO III - ACEITE</h6>
-              <p>A partir do momento da utilização do website www.codigocertocoders.com.br pressupõe que o usuário aceitou a <strong>política de privacidade.</strong> Desta forma reservamos ao direito de modificar esta política sem que seja realizado um aviso prévio. Por este motivo, nós recomendamos que os usuários realizem uma consulta regularmente a nossa política, para que desta forma, se mantenham sempre atualizados de possíveis alterações, caso seja necessário é possível entrar em contato através de nossas redes sociais informando suas dúvidas.</p>
-              <p>O desenvolvedor poderá coletar informações pessoais do usuário que acessa o site, tais como nome, e-mail, número de telefone fixo e/ou celular, endereço, data de nascimento, ip e/ou outros dados. Na grande maioria das vezes, esses dados são utilizados para ativar a função de geotarget (exibir determinados conteúdos de acordo com a localização) e também filtrando por tipo de usuário (analisando a necessidade de cada um).</p>
-              <h6>SEÇÃO IV - VINCULO A SITES EXTERNOS</h6>
-              <p>O site www.codigocertocoders.com.br pode conter vinculo com sites externos, estes que podem possuir ferramentas e/ou informações proveitosas para os usuários. Esta <strong>política de privacidade</strong> não é empregada aos sites externos, se for do interesse do usuário, o mesmo deverá acessar a <strong>política de privacidade</strong> do site em questão para ter conhecimento dos detalhes.</p><h6>COOKIES</h6>
-              <p>O site usa cookies com o objetivo de armazenar informações, como por exemplo, as preferências do publico que acessa um determinado site, esses cookies podem ser coletados por meio de um mero popup ou até mesmo uma integração com demais serviços.</p>
-              <p>Você como usuário do website www.codigocertocoders.com.br possui a total autonomia de desativar os cookies, basta acessar a configuração do seu navegador de preferência e realizar a modificação, ou caso tenha, poderá utilizar um antivirus que faça essa configuração diretamente. Vale ressaltar que, essa modificação poderá influenciar em como você navega em nosso site e em outros sites. Este fato ocorre, porque determinas programações necessitam da utilização de cookies para funcionarem corretamente, tais como os sites que necessitem de login em determinada área restrita.</p><h6>ATUALIZAÇÃO</h6>
-              <p>Essa <strong>politica de privacidade</strong> obteve sua última atualização na data de 16/07/2024, podendo ser modificada a qualquer momento, sem aviso prévio.</p>
-          </div>
-    </div>
+      <div class="modal-body">
+        <div class="modal-body font-roboto">
+          <h5 class="fs-6 pb-2">
+            Termos e condições para participar do programa Código Certo.
+          </h5>
+          <p class="modal__text">
+          </p>
+          <p>É importante esclarecer que dados pessoais são considerados como: todas as informações que possam ser
+            utilizadas para identificar alguma pessoa. Estes dados, podem ser considerados sensíveis, tais como:
+            convicção religiosa, saúde ou à vida sexual, origem racial ou étnica, opinião política, dado genético ou
+            biométrico, filiação a sindicato ou a organização de caráter religioso, filosófico ou político.</p>
+          <h6>SEÇÃO I - INFORMAÇÕES GERAIS</h6>
+          <p>Nesta <strong>política de privacidade</strong> será informado a maneira que ocorre o tratamento dos dados
+            pessoais das pessoas que acessam o site www.codigocertocoders.com.br informando assim, de forma transparente
+            quais são os dados, qual o intuito da coleta e a maneira que os visitantes podem controlar ou deletar suas
+            informações.</p>
+          <p>Este texto foi criado de acordo com a lei de Proteção de Dados Pessoais (Lei /18), o Marco Civil da
+            Internet (Lei 12.965 /14) e também o Regulamento da UE n. 2016/6790. Vale ressaltar que, este texto poderá
+            sofrer alterações por conta de eventuais atualizações normativas.</p>
+          <p>Informamos que toda e qualquer informação pessoal coletada por por nosso website
+            www.codigocertocoders.com.br será utilizada para melhorar a sua experiência ao navegar em nosso website,
+            visando desta maneira que sua visita se torne mais vantajosa e assertiva.</p>
+          <p>A confidencialidade das informações pessoais dos usuários do site www.codigocertocoders.com.br é de suma
+            importância para nossa equipe, por este motivo, buscamos otimizar continuamente todos os processos internos,
+            para mante-los em segurança e de acordo com todas as normas impostas.</p>
+          <h6>SEÇÃO II - COLETA DOS DADOS</h6>
+          <p>Os dados pessoais dos visitantes podem ser coletados quando:</p>
+          <p><strong>II.I</strong> - O indivíduo realiza a criação de um cadastro no site www.codigocertocoders.com.br e
+            com base nisso podem ser solicitados dados como: email, nome, cidade, telefone, etc.</p>
+          <p><strong>II.II</strong> - O indivíduo navega nas páginas de nosso site www.codigocertocoders.com.br e neste
+            caso, podem ser coletados dados como: palavras-chaves de origem do buscador, comentários, navegador
+            utilizado, IP da rede, etc.</p>
+          <p><strong>II.III</strong> - Por meio de terceiros, tais como: Google e/ou Facebook, sendo que, no momento de
+            logar em um destes sites é autorizado diretamente pelo terceiro.</p>
+          <p>No caso de envio de newsletters ou até mesmo envio de avisos por e-mail os cookies podem ser utilizados
+            para direcionar um conteúdo mais adequado ao usuário final, com o intuito de melhorar a experiência de quem
+            está lendo o e-mail, vale ressaltar que cada provedor de email possui suas diretrizes, você deverá respeitar
+            suas devidas políticas.</p>
+          <h6>SEÇÃO III - ACEITE</h6>
+          <p>A partir do momento da utilização do website www.codigocertocoders.com.br pressupõe que o usuário aceitou a
+            <strong>política de privacidade.</strong> Desta forma reservamos ao direito de modificar esta política sem
+            que seja realizado um aviso prévio. Por este motivo, nós recomendamos que os usuários realizem uma consulta
+            regularmente a nossa política, para que desta forma, se mantenham sempre atualizados de possíveis
+            alterações, caso seja necessário é possível entrar em contato através de nossas redes sociais informando
+            suas dúvidas.</p>
+          <p>O desenvolvedor poderá coletar informações pessoais do usuário que acessa o site, tais como nome, e-mail,
+            número de telefone fixo e/ou celular, endereço, data de nascimento, ip e/ou outros dados. Na grande maioria
+            das vezes, esses dados são utilizados para ativar a função de geotarget (exibir determinados conteúdos de
+            acordo com a localização) e também filtrando por tipo de usuário (analisando a necessidade de cada um).</p>
+          <h6>SEÇÃO IV - VINCULO A SITES EXTERNOS</h6>
+          <p>O site www.codigocertocoders.com.br pode conter vinculo com sites externos, estes que podem possuir
+            ferramentas e/ou informações proveitosas para os usuários. Esta <strong>política de privacidade</strong> não
+            é empregada aos sites externos, se for do interesse do usuário, o mesmo deverá acessar a <strong>política de
+              privacidade</strong> do site em questão para ter conhecimento dos detalhes.</p>
+          <h6>COOKIES</h6>
+          <p>O site usa cookies com o objetivo de armazenar informações, como por exemplo, as preferências do publico
+            que acessa um determinado site, esses cookies podem ser coletados por meio de um mero popup ou até mesmo uma
+            integração com demais serviços.</p>
+          <p>Você como usuário do website www.codigocertocoders.com.br possui a total autonomia de desativar os cookies,
+            basta acessar a configuração do seu navegador de preferência e realizar a modificação, ou caso tenha, poderá
+            utilizar um antivirus que faça essa configuração diretamente. Vale ressaltar que, essa modificação poderá
+            influenciar em como você navega em nosso site e em outros sites. Este fato ocorre, porque determinas
+            programações necessitam da utilização de cookies para funcionarem corretamente, tais como os sites que
+            necessitem de login em determinada área restrita.</p>
+          <h6>ATUALIZAÇÃO</h6>
+          <p>Essa <strong>politica de privacidade</strong> obteve sua última atualização na data de 16/07/2024, podendo
+            ser modificada a qualquer momento, sem aviso prévio.</p>
+        </div>
+      </div>
 
-    <div class="modal-footer">
-      <button id="btnCiente">Estou ciente</button>
+      <div class="modal-footer">
+        <button id="btnCiente">Estou ciente</button>
+      </div>
     </div>
   </div>
-</div>
 
 
   <script>
@@ -505,7 +554,20 @@
         { github: "BragaJunior1978", name: "Braga Junior", badge: "OnComanda", date: "2025-10-16", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=BJ" }
       ],
       "Hackathons": [
-        { github: "mariadev", name: "Maria Silva", badge: "Hackathon Winner", date: "2024-08-20", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=HW" }      
+        { github: "gustavoronan", name: "Gustavo Ronan", badge: "🏅 1º Lugar: Greenline (Equipe 17)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=GR" },
+        { github: "lucasSchneider1999", name: "Lucas Schneider", badge: "🏅 1º Lugar: Greenline (Equipe 17)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=LS" },
+        { github: "EduardoPereiraLima-Dev", name: "Eduardo Pereira Lima", badge: "🏅 1º Lugar: Greenline (Equipe 17)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=EL" },        
+        { github: "PedroHaugusto", name: "Pedro Santos", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=WG" },
+        { github: "wilgoncalves", name: "Willian Gonçalves", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=WG" },
+        { github: "Hardsys-Andre", name: "Andre Silva", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=AS" },
+        { github: "viniciusdyo", name: "Vinicius Dyonisio", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=VD" },
+        { github: "elizalap", name: "Eliza Lima", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=EL" },
+        { github: "yurinasc21", name: "Yuri Nascimento", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=YN" },
+        { github: "VivianeSantos35", name: "Viviane Santos", badge: "🥈 2º Lugar: HortaTech (Equipe 15)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=VS" }
+        ,
+        { github: "devjuliof", name: "Julio Cesar", badge: "🥉 3º Lugar: Guardians of the Code (Equipe 14)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=JC" },
+        { github: "joalisson-p-maia", name: "Joalisson Pinto Maia", badge: "🥉 3º Lugar: Guardians of the Code (Equipe 14)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=JM" },
+        { github: "dickfreitas", name: "Dickson Freitas", badge: "🥉 3º Lugar: Guardians of the Code (Equipe 14)", date: "2024-08-28", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=DF" }
       ]
     };
 
@@ -652,4 +714,5 @@
   </script>
   <script src="modal.js"></script>
 </body>
+
 </html>
