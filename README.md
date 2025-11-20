@@ -51,6 +51,8 @@ Você pode conquistar um badge ao:
 [Mentor de Iniciantes](./badges/mentor-init/README.md)
 - OnComanda Developer
 [OnComanda Developer](./badges/oncomanda/README.md)
+- Criador de Projetos
+[Criador de Projetos](./badges/criadoproj/README.md)
 - Contribuição para Projetos Open Source:
   - [Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
   - [Thiago Sousa](./badges/contributions/thiagodeas-badge.curriculum-maker.md)
