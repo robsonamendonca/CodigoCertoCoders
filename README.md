@@ -7,6 +7,7 @@ Bem-vindo ao repositório oficial de **Badges** da Comunidade Código Certo Code
 ### Objetivo
 
 Este repositório tem como objetivo:
+
 - Incentivar a participação ativa dos membros da comunidade.
 - Reconhecer o trabalho realizado, seja em hackathons, workshops ou projetos de código aberto.
 - Motivar novos membros a se engajarem em atividades e a contribuírem com soluções criativas.
@@ -16,6 +17,7 @@ Este repositório tem como objetivo:
 ## Como Conquistar um Badge?
 
 Você pode conquistar um badge ao:
+
 - Participar de hackathons e eventos organizados pela comunidade.
 - Contribuir com projetos de código aberto.
 - Ajudar a resolver problemas técnicos ou apoiar outros membros no canal de suporte.
@@ -27,6 +29,7 @@ Você pode conquistar um badge ao:
 
 - [Badges por Atividades](./activity-badges.md): Conquiste badges por participar de eventos e contribuir com a comunidade.
 - [Badges por Projetos](./project-badges.md): Receba badges por desenvolver projetos e soluções reconhecidas pela comunidade.
+- [Badges por Hackathons](./badges/hackathon/E-commerce%20de%20Bairro.md): Receba badges por participar de hackathons e desenvolver soluções reconhecidas pela comunidade.
 
 ---
 
@@ -39,6 +42,7 @@ Você pode conquistar um badge ao:
 ---
 
 ### Badges Conquistado:
+
 - Participação em Hackathons
 [Badges por Hackathons](./badges/hackathon/E-commerce%20de%20Bairro.md)
 - Conclusão de Workshop
@@ -50,7 +54,6 @@ Você pode conquistar um badge ao:
 - Contribuição para Projetos Open Source:
   - [Jânio Filho](./badges/contributions/janioofi-badge.curriculo-generator-dashboard.md)
   - [Thiago Sousa](./badges/contributions/thiagodeas-badge.curriculum-maker.md)
-
 
 ---
 
