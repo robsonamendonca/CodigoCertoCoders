@@ -419,6 +419,21 @@
           </p>
           <div class="badge-grid" id="projectBadges"></div>
         </div>
+
+                <!-- Category 3: Hackathons -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="category-title">Badges por Hackathons</h3>
+          </div>
+          <p class="category-desc">
+            Receba badges por participar de hackathons e desenvolver soluções reconhecidas pela comunidade.
+            <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/hackathon/E-commerce%20de%20Bairro.md" target="_blank" style="color: var(--red); font-weight: 600;">Ver critérios →</a>
+          </p>
+          <div class="badge-grid" id="hackathonBadges"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -488,14 +503,17 @@
     // Mock data with badge thumbnails
     const badgeData = {
       "Atividades": [
-        { github: "janioofi", name: "Robson Mendonça", badge: "Participação Comunidade", date: "2024-07-10", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=PC" },
-        { github: "anacosta", name: "Ana Costa", badge: "Evento Live Code", date: "2024-07-12", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=EL" },
+        { github: "janioofi", name: "Janio Filho", badge: "Participação Comunidade", date: "2024-07-10", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=PC" },
+        { github: "anacosta", name: "Ana Costa", badge: "Evento Live Code", date: "2024-07-12", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=ACL" },
         { github: "lucasweb", name: "Lucas Ferreira", badge: "Mentoria Iniciante", date: "2024-07-15", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=MI" }
       ],
       "Projetos": [
-        { github: "janioofi", name: "Janio Filho", badge: "Contribuidor Destacado", date: "2024-07-10", thumbnail: "https://github.com/janioofi.png?size=60" },
-        { github: "thiagodeas", name: "Thiago Sousa", badge: "Contribuidor Destacado", date: "2024-07-12", thumbnail: "https://github.com/thiagodeas.png?size=60" },
-        { github: "BragaJunior1978", name: "Braga Junior", badge: "OnComanda", date: "2025-10-16", thumbnail: "https://github.com/BragaJunior1978.png?size=60" }
+        { github: "janioofi", name: "Janio Filho", badge: "Contribuidor Destacado", date: "2024-07-10", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=JF" },
+        { github: "thiagodeas", name: "Thiago Sousa", badge: "Contribuidor Destacado", date: "2024-07-12", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=TS" },
+        { github: "BragaJunior1978", name: "Braga Junior", badge: "OnComanda", date: "2025-10-16", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=BJ" }
+      ],
+      "Hackathons": [
+        { github: "mariadev", name: "Maria Silva", badge: "Hackathon Winner", date: "2024-08-20", thumbnail: "https://placehold.co/40x40/e53e3e/ffffff?text=HW" }      
       ]
     };
 
@@ -505,6 +523,7 @@
     const resultContainer = document.getElementById('resultContainer');
     const activityBadges = document.getElementById('activityBadges');
     const projectBadges = document.getElementById('projectBadges');
+    const hackathonBadges = document.getElementById('hackathonBadges');
 
     // Render badge lists with thumbnails
     function renderBadgeLists() {
@@ -540,6 +559,23 @@
           </div>
         `;
         projectBadges.appendChild(badgeItem);
+      });
+
+      // Render Hackathons
+      hackathonBadges.innerHTML = '';
+      badgeData.Hackathons.forEach(item => {
+        const avatarUrl = `https://github.com/${item.github}.png?size=60`;
+        const badgeItem = document.createElement('div');
+        badgeItem.className = 'badge-item';
+        badgeItem.innerHTML = `
+          <img src="${item.thumbnail}" alt="${item.badge}" class="badge-thumbnail">
+          <img src="${avatarUrl}" alt="${item.name}" class="badge-avatar" onerror="this.src='https://placehold.co/36x36/000/fff?text=${item.github[0].toUpperCase()}'">
+          <div>
+            <div><strong>${item.badge}</strong></div>
+            <small>@${item.github}</small>
+          </div>
+        `;
+        hackathonBadges.appendChild(badgeItem);
       });
     }
 
