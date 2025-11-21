@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnComanda – Desafio Código Certo Coders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #e53e3e;
+      --primary-dark: #f90101;
+      --secondary: #0f172a;
+      --accent: #f59e0b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --success: #10b981;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--secondary);
+      background-color: var(--light);
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--secondary);
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Header */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--secondary);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      padding: 160px 0 100px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Benefits */
+    .benefits {
+      background-color: white;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .benefit-icon {
+      color: var(--success);
+      font-size: 1.5rem;
+      min-width: 30px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .cta h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.9;
+    }
+
+    .cta .btn {
+      background-color: white;
+      color: var(--primary);
+      font-size: 1.1rem;
+      padding: 14px 36px;
+    }
+
+    .cta .btn:hover {
+      background-color: var(--light);
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo i {
+      color: var(--accent);
+    }
+
+    .footer-links h4 {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-receipt"></i>
+        OnComanda
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Recursos</a></li>
+        <li><a href="#benefits">Benefícios</a></li>
+        <li><a href="#cta">Comece Agora</a></li>
+        <li>
+          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn btn-outline">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Transforme seu Restaurante com a OnComanda</h1>
+      <p>Desafio da Comunidade Código Certo Coders: construa uma comanda eletrônica web completa para bares e restaurantes e transforme seu conhecimento em renda recorrente.</p>
+      <div class="hero-buttons">
+        <a href="#cta" class="btn">Participar do Desafio</a>
+        <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github"></i> Ver no GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container text-center">
+      <h2 class="section-title">Sistema Completo em 3 Módulos</h2>
+      <p class="section-subtitle">Uma solução web moderna, prática e escalável para automação comercial</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>App para Garçom</h3>
+          <p>Lance pedidos diretamente nas mesas com mapa visual de status, controle de comandas e integração em tempo real com cozinha e bar.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h3>Monitor de Preparos</h3>
+          <p>Acompanhe pedidos em tempo real na cozinha e bar com atualização automática e controle de fluxo de produção.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h3>Módulo Administrativo</h3>
+          <p>Gestão completa: usuários, mesas, cardápio, relatórios de vendas e configurações avançadas de impressão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="benefits">
+    <div class="container text-center">
+      <h2 class="section-title">Benefícios para seu Estabelecimento</h2>
+      <p class="section-subtitle">Resolva problemas reais com uma solução feita por desenvolvedores que entendem o negócio</p>
+      
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div>
+            <h4>Agilidade no Atendimento</h4>
+            <p>Pedidos enviados instantaneamente, eliminando papel e erros de comunicação.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <h4>Redução de Erros e Fraudes</h4>
+            <p>Controle digital com registro de cancelamentos para auditoria completa.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div>
+            <h4>Melhor Gestão do Negócio</h4>
+            <p>Relatórios precisos sobre vendas, produtos mais consumidos e controle de mesas.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div>
+            <h4>Suporte Humanizado</h4>
+            <p>Desenvolvedor próximo do cliente com suporte personalizado e ágil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="cta">
+    <div class="container">
+      <h2>Pronto para Transformar seu Conhecimento em Renda?</h2>
+      <p>Participe do desafio OnComanda da Comunidade Código Certo Coders e construa uma solução que resolve problemas reais de bares e restaurantes.</p>
+      <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn">
+        <i class="fab fa-github"></i> Começar Agora no GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <i class="fas fa-receipt"></i>
+            OnComanda
+          </div>
+          <p>Desafio da Comunidade Código Certo Coders para desenvolvedores que querem transformar conhecimento em renda recorrente.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Links Úteis</h4>
+          <ul>
+            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank">Documentação do Projeto</a></li>
+            <li><a href="oncomandainfo.html" target="_blank">Material de Apoio</a></li>
+            <li><a href="#features">Recursos</a></li>
+            <li><a href="#benefits">Benefícios</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Comunidade</h4>
+          <ul>
+            <li><a href="https://github.com/CodigoCertoCoders" target="_blank">Código Certo Coders</a></li>
+            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/project-badges.md" target="_blank">Desafios de Projeto</a></li>
+            <li><a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" target="_blank">Suporte</a></li>
+            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main" target="_blank">Contribuições</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 OnComanda - Desafio Código Certo Coders. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

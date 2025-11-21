@@ -1,514 +1,490 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OnComanda – Desafio Código Certo Coders</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Desafios & Badges | Código Certo Coders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vermelho: #e74c3c;
+            --preto: #2c3e50;
+            --branco: #ffffff;
+            --cinza-claro: #ecf0f1;
+            --cinza-escuro: #34495e;
+        }
 
-    :root {
-      --primary: #e53e3e;
-      --primary-dark: #f90101;
-      --secondary: #0f172a;
-      --accent: #f59e0b;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --success: #10b981;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--branco);
+            color: var(--preto);
+            overflow-x: hidden;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--secondary);
-      background-color: var(--light);
-      scroll-behavior: smooth;
-    }
+        .navbar {
+            background-color: var(--preto) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    h1, h2, h3, h4 {
-      font-weight: 700;
-      line-height: 1.2;
-    }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--vermelho) !important;
+        }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+        .navbar-nav .nav-link {
+            color: var(--branco) !important;
+            font-weight: 500;
+        }
 
-    ul {
-      list-style: none;
-    }
+        .hero {
+            background: linear-gradient(135deg, var(--preto) 0%, var(--cinza-escuro) 100%);
+            color: var(--branco);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        .hero::before,
+        .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: var(--vermelho);
+            opacity: 0.1;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
+        .hero::before {
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+        }
 
-    .btn:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
+        .hero::after {
+            bottom: -100px;
+            left: -50px;
+            width: 400px;
+            height: 400px;
+            opacity: 0.05;
+        }
 
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
+        .btn-vermelho {
+            background-color: var(--vermelho);
+            border-color: var(--vermelho);
+            color: var(--branco);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
 
-    .btn-outline:hover {
-      background-color: var(--primary);
-      color: white;
-    }
+        .btn-vermelho:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
 
-    section {
-      padding: 80px 0;
-    }
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
 
-    .text-center {
-      text-align: center;
-    }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--vermelho);
+            border-radius: 2px;
+        }
 
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: var(--secondary);
-    }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            overflow: hidden;
+            height: 100%;
+        }
 
-    .section-subtitle {
-      font-size: 1.25rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
 
-    /* Header */
-    header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+        .card-header {
+            background: var(--preto);
+            color: var(--branco);
+            font-weight: 700;
+            padding: 18px 20px;
+            border-radius: 10px 10px 0 0 !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--vermelho);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .card-body {
+            padding: 25px;
+        }
 
-    .logo i {
-      color: var(--accent);
-    }
+        .badge-card {
+            background: linear-gradient(135deg, var(--preto), var(--cinza-escuro));
+            color: var(--branco);
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+            margin: 12px 0;
+            transition: all 0.3s ease;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
+        .badge-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+        }
 
-    .nav-links a {
-      font-weight: 600;
-      color: var(--secondary);
-      transition: color 0.3s;
-    }
+        .badge-icon {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: block;
+        }
 
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+        .badge-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
-      padding: 160px 0 100px;
-      text-align: center;
-    }
+        .badge-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--secondary);
-    }
+        .highlight {
+            color: var(--vermelho);
+            font-weight: 700;
+        }
 
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-    }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
 
-    /* Features */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
+        .footer {
+            background: var(--preto);
+            color: var(--branco);
+            padding: 40px 0 20px;
+        }
 
-    .feature-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
+        .footer-title {
+            color: var(--vermelho);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--vermelho);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            margin-right: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-    .feature-icon {
-      width: 70px;
-      height: 70px;
-      background: rgba(37, 99, 235, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      color: var(--primary);
-      font-size: 1.8rem;
-    }
+        .social-icon:hover {
+            background: var(--branco);
+            color: var(--vermelho);
+            transform: translateY(-3px);
+        }
 
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 0;
+            }
 
-    /* Benefits */
-    .benefits {
-      background-color: white;
-    }
+            .card-body {
+                padding: 20px;
+            }
 
-    .benefits-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .benefit-icon {
-      color: var(--success);
-      font-size: 1.5rem;
-      min-width: 30px;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      text-align: center;
-      padding: 100px 0;
-    }
-
-    .cta h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.9;
-    }
-
-    .cta .btn {
-      background-color: white;
-      color: var(--primary);
-      font-size: 1.1rem;
-      padding: 14px 36px;
-    }
-
-    .cta .btn:hover {
-      background-color: var(--light);
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--secondary);
-      color: white;
-      padding: 60px 0 30px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-logo i {
-      color: var(--accent);
-    }
-
-    .footer-links h4 {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      color: var(--gray);
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+            .badge-card {
+                padding: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container navbar">
-      <a href="#" class="logo">
-        <i class="fas fa-receipt"></i>
-        OnComanda
-      </a>
-      <ul class="nav-links">
-        <li><a href="#features">Recursos</a></li>
-        <li><a href="#benefits">Benefícios</a></li>
-        <li><a href="#cta">Comece Agora</a></li>
-        <li>
-          <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn btn-outline">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code"></i> Código Certo Coders
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#desafios">Desafios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#badges">Badges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#participe">Participe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Transforme seu Restaurante com a OnComanda</h1>
-      <p>Desafio da Comunidade Código Certo Coders: construa uma comanda eletrônica web completa para bares e restaurantes e transforme seu conhecimento em renda recorrente.</p>
-      <div class="hero-buttons">
-        <a href="#cta" class="btn">Participar do Desafio</a>
-        <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn btn-outline">
-          <i class="fab fa-github"></i> Ver no GitHub
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">🏆 Desafios & Badges</h1>
+            <p class="lead mb-4">Prove seu valor, evolua suas habilidades e conquiste reconhecimento com <span class="highlight">badges exclusivos</span> da comunidade.</p>
+            <p class="mb-5">Atualmente: <strong>2 desafios</strong> ativos • <strong>3 badges</strong> disponíveis</p>
+            <a href="#desafios" class="btn btn-vermelho pulse">
+                <i class="fas fa-trophy me-2"></i> Veja os Desafios
+            </a>
+        </div>
+    </section>
 
-  <!-- Features -->
-  <section id="features">
-    <div class="container text-center">
-      <h2 class="section-title">Sistema Completo em 3 Módulos</h2>
-      <p class="section-subtitle">Uma solução web moderna, prática e escalável para automação comercial</p>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>App para Garçom</h3>
-          <p>Lance pedidos diretamente nas mesas com mapa visual de status, controle de comandas e integração em tempo real com cozinha e bar.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tv"></i>
-          </div>
-          <h3>Monitor de Preparos</h3>
-          <p>Acompanhe pedidos em tempo real na cozinha e bar com atualização automática e controle de fluxo de produção.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-cog"></i>
-          </div>
-          <h3>Módulo Administrativo</h3>
-          <p>Gestão completa: usuários, mesas, cardápio, relatórios de vendas e configurações avançadas de impressão.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Desafios Section -->
+    <section id="desafios" class="py-5">
+        <div class="container">
+            <h2 class="section-title">🔥 Desafios Ativos</h2>
+            <div class="row">
+                <!-- Desafio 1 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="mb-0">1. Desafio OnComanda</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Crie um sistema web de comanda eletrônica para bares e restaurantes, do cadastro de mesas ao fechamento da conta.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i> Foco em UX para ambiente gastronômico</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Integração com fluxo real de atendimento</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Entrega via board Kanban no Trello (JSON)</li>
+                            </ul>
+                            <div class="mt-3">
+                                <span class="badge bg-danger">1 badge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Benefits -->
-  <section id="benefits" class="benefits">
-    <div class="container text-center">
-      <h2 class="section-title">Benefícios para seu Estabelecimento</h2>
-      <p class="section-subtitle">Resolva problemas reais com uma solução feita por desenvolvedores que entendem o negócio</p>
-      
-      <div class="benefits-list">
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div>
-            <h4>Agilidade no Atendimento</h4>
-            <p>Pedidos enviados instantaneamente, eliminando papel e erros de comunicação.</p>
-          </div>
+                <!-- Desafio 2 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4 class="mb-0">2. Mestre da Documentação</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Crie um <code>README.md</code> profissional, completo e claro para qualquer projeto — seguindo os 8 requisitos essenciais.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i> 48h de duração</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Validação automática via PR</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Inclui subdesafio colaborativo</li>
+                            </ul>
+                            <div class="mt-3">
+                                <span class="badge bg-danger">2 badges</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div>
-            <h4>Redução de Erros e Fraudes</h4>
-            <p>Controle digital com registro de cancelamentos para auditoria completa.</p>
-          </div>
-        </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div>
-            <h4>Melhor Gestão do Negócio</h4>
-            <p>Relatórios precisos sobre vendas, produtos mais consumidos e controle de mesas.</p>
-          </div>
-        </div>
-        
-        <div class="benefit-item">
-          <div class="benefit-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <div>
-            <h4>Suporte Humanizado</h4>
-            <p>Desenvolvedor próximo do cliente com suporte personalizado e ágil.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section id="cta" class="cta">
-    <div class="container">
-      <h2>Pronto para Transformar seu Conhecimento em Renda?</h2>
-      <p>Participe do desafio OnComanda da Comunidade Código Certo Coders e construa uma solução que resolve problemas reais de bares e restaurantes.</p>
-      <a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank" class="btn">
-        <i class="fab fa-github"></i> Começar Agora no GitHub
-      </a>
-    </div>
-  </section>
+    <!-- Badges Section -->
+    <section id="badges" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">🏅 Todos os Badges Disponíveis</h2>
+            <p class="text-center mb-5">Conquiste, exiba e inclua em seu portfólio. Todos são gerados <strong>automaticamente</strong> após validação.</p>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-about">
-          <div class="footer-logo">
-            <i class="fas fa-receipt"></i>
-            OnComanda
-          </div>
-          <p>Desafio da Comunidade Código Certo Coders para desenvolvedores que querem transformar conhecimento em renda recorrente.</p>
+            <div class="row">
+                <!-- Badge 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="badge-card">
+                        <img src="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/mestredoc/MestreDaDocumentacao.png?raw=true" width="50%" height="50%" />
+                        <i class="fas fa-crown badge-icon text-warning"></i>
+                        <h3 class="badge-title">Mestre da Documentação</h3>
+                        <p class="badge-desc">Entrega válida do README com todos os 8 requisitos.</p>
+                        <small>PR com título: <code>[mestre] Entrega...</code></small>
+                    </div>
+                </div>
+
+                <!-- Badge 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="badge-card">
+                        <img src="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/devqapoiadev/DevQApoiaDev.png?raw=true" width="50%" height="50%" />
+                        <i class="fas fa-hands-helping badge-icon text-info"></i>
+                        <h3 class="badge-title">Dev que Apoia Dev</h3>
+                        <p class="badge-desc">Indicou alguém que concluiu o desafio de documentação.</p>
+                        <small>PR com título: <code>[apoia] Indicação...</code></small>
+                    </div>
+                </div>
+
+                <!-- Badge 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="badge-card">
+                        <img src="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/OnComandaDeveloper2025.png?raw=true" width="50%" height="50%" />
+                        <i class="fas fa-laptop-code badge-icon text-danger"></i>
+                        <h3 class="badge-title">OnComanda Developer</h3>
+                        <p class="badge-desc">Concluiu o desafio OnComanda com entrega funcional e documentada.</p>
+                        <small>Via board JSON + validação da comunidade</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 p-4 bg-white rounded border">
+                <h4 class="mb-3">⚙️ Como os Badges São Gerados?</h4>
+                <p class="mb-0">
+                    <i class="fas fa-robot text-muted me-2"></i>
+                    Tudo é automático: GitHub Actions valida o PR, gera o badge SVG e o certificado <code>.md</code> — e faz merge sozinho.
+                </p>
+            </div>
         </div>
-        
-        <div class="footer-links">
-          <h4>Links Úteis</h4>
-          <ul>
-            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/badges/oncomanda/README.md" target="_blank">Documentação do Projeto</a></li>
-            <li><a href="oncomandainfo.html" target="_blank">Material de Apoio</a></li>
-            <li><a href="#features">Recursos</a></li>
-            <li><a href="#benefits">Benefícios</a></li>
-          </ul>
+    </section>
+
+    <!-- Como Participar Section -->
+    <section id="participe" class="py-5">
+        <div class="container">
+            <h2 class="section-title">🚀 Pronto para Começar?</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="lead mb-4">
+                        Escolha um desafio, siga as instruções e conquiste seu badge em até 48h.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="https://robsonamendonca.github.io/CodigoCertoCoders/oncomanda.html" class="btn btn-outline-dark">
+                            <i class="fas fa-utensils me-2"></i> OnComanda
+                        </a>
+                        <a href="https://robsonamendonca.github.io/CodigoCertoCoders_ReadMe/" class="btn btn-outline-dark">
+                            <i class="fas fa-file-alt me-2"></i> Mestre da Documentação
+                        </a>
+                        <a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" class="btn btn-vermelho">
+                            <i class="fas fa-users me-2"></i> Junte-se à Comunidade
+                        </a>
+                    </div>
+                    <p class="mt-4 text-muted">
+                        <small>
+                            <i class="fas fa-lightbulb me-1"></i>
+                            Dica: use o <a href="https://ralmtriggolabs.github.io/generate-readme/" target="_blank" class="text-danger">generate-readme</a> para agilizar seu README!
+                        </small>
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <div class="footer-links">
-          <h4>Comunidade</h4>
-          <ul>
-            <li><a href="https://github.com/CodigoCertoCoders" target="_blank">Código Certo Coders</a></li>
-            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/blob/main/project-badges.md" target="_blank">Desafios de Projeto</a></li>
-            <li><a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" target="_blank">Suporte</a></li>
-            <li><a href="https://github.com/robsonamendonca/CodigoCertoCoders/tree/main" target="_blank">Contribuições</a></li>
-          </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-code me-2"></i> Código Certo Coders
+                    </h3>
+                    <p>Desafios reais. Badges reais. Crescimento real.</p>
+                    <div class="mt-3">
+                        <a href="https://github.com/CodigoCertoCoders" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://chat.whatsapp.com/CYrfRQRLVcM6r0CreK4gYU" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/codigocertocoders/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtu.be/iS8YDsevj0Q?si=Za3bI2-HTsT_Esce" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4 class="footer-title">Desafios</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#desafios" class="text-light text-decoration-none">OnComanda</a></li>
+                        <li><a href="#desafios" class="text-light text-decoration-none">Mestre da Documentação</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fab fa-whatsapp me-2 text-danger"></i> WhatsApp</li>
+                        <li><i class="fas fa-map-marker-alt me-2 text-danger"></i> Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Código Certo Coders. Todos os direitos reservados.</p>
+            </div>
         </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 OnComanda - Desafio Código Certo Coders. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
