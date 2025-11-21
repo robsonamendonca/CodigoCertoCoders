@@ -55,9 +55,9 @@ Como forma de reconhecimento pela sua contribuição e participação, você foi
 ### Passos para fazer o download
 
 1. Clique no link abaixo para visualizar e baixar o seu badge:
-   - [Download Badge 1º- Hackaton E-commerce para Bairro](1-lugar-badge.png.png)
-   - [Download Badge 2º- Hackaton E-commerce para Bairro](2-lugar-badge.png.png)
-   - [Download Badge 3º- Hackaton E-commerce para Bairro](3-lugar-badge.png.png)
+   - [Download Badge 1º- Hackaton E-commerce para Bairro](1-lugar-badge.png)
+   - [Download Badge 2º- Hackaton E-commerce para Bairro](2-lugar-badge.png)
+   - [Download Badge 3º- Hackaton E-commerce para Bairro](3-lugar-badge.png)
 
 2. Após o download, você pode usar o badge em:
    - Seu **perfil do GitHub**: Adicione o badge ao README do seu perfil ou repositório.
