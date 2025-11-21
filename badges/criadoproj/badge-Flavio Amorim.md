@@ -33,7 +33,7 @@ Este membro demonstrou capacidade de:
 
 ## 🖼️ Badge Recebido
 
-![Badge OnComanda](../criadoproj/criador_de_projetos.png)
+![Badge OnComanda](../criadoproj/badge-Flavio%20Amorim.png)
 
 ---
 
