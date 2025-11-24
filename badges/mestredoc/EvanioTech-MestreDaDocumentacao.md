@@ -17,7 +17,7 @@
 ---
 
 ## 🖼️ Badge Recebido
-![Badge Mestre da Documentação](../badges/EvanioTech-MestreDaDocumentacao.png)
+![Badge Mestre da Documentação](EvanioTech-MestreDaDocumentacao.png)
 
 ---
 
